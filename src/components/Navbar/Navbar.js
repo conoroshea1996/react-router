@@ -1,5 +1,7 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { Container } from '@material-ui/core';
+import '../Navbar/Navbar.css';
 
 function Navbar() {
     return (
@@ -8,13 +10,13 @@ function Navbar() {
                 <Container maxWidth='md'>
                     <a href="#" className="brand-logo">Logo</a>
                     <ul id="nav-mobile" className="right ">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li> <NavLink exact={true} to='/'>Home</NavLink> </li>
+                        <li><NavLink to='/about'>About</NavLink></li>
+                        <li><NavLink to='/contact'>Contact</NavLink></li>
                     </ul>
                 </Container>
             </div>
-        </nav>
+        </nav >
     );
 }
 

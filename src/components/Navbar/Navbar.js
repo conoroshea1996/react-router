@@ -9,17 +9,16 @@ class Navbar extends React.Component {
     }
     ToggleNav = () => {
         this.setState({ isToggled: !this.state.isToggled })
-        console.log(this.state);
     }
-
     render() {
+        const { isToggled } = this.state;
         return (
             <nav>
                 <div className="nav-wrapper blue darken-1">
                     <Container maxWidth='md'>
                         <div onClick={this.ToggleNav}
                             className=
-                            {'toggler navbar_btn ' + (this.state.isToggled ? '' : 'change')}
+                            {'toggler navbar_btn ' + (isToggled ? '' : 'change')}
                         >
                             <div className="bar bar1"></div>
                             <div className="bar bar2"></div>
@@ -33,7 +32,7 @@ class Navbar extends React.Component {
                             <li><NavLink to='/contact'>Contact</NavLink></li>
                         </ul>
 
-                        <ul className={this.state.isToggled ? 'none' : 'small-size-nav'} >
+                        <ul className={isToggled ? 'none' : 'small-size-nav'} >
                             <li> <NavLink exact={true} to='/'>Home</NavLink> </li>
                             <li><NavLink to='/about'>About</NavLink></li>
                             <li><NavLink to='/contact'>Contact</NavLink></li>

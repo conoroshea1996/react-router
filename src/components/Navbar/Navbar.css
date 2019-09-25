@@ -1,3 +1,56 @@
 .active{
     text-decoration: underline;
 }
+.none{
+    display: none;
+}
+.toggler{
+    display: none;
+}
+.navbar_btn {
+    border: 3px solid white;
+    position: fixed;
+    top:10px;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 25px;
+    height: 3px;
+    margin: 0.4rem;
+    background: white;
+    transition: all .4s ease;
+}
+
+.change .bar1 {
+    transform: rotate(-45deg) translate(-8px, 7px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: rotate(45deg) translate(-6px, -5.5px);
+}
+
+@media only screen and (max-width: 600px) {
+   .full-size-nav{
+       display: none;
+   }
+   .small-size-nav{
+    position: fixed;
+    top:56px;
+    left: 0;
+    background-color: #1E88E5 !important;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    }
+    .toggler{
+        display: inline-block;
+    }
+}
+

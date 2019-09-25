@@ -1,7 +1,10 @@
 import React from 'react';
 import { Container } from '@material-ui/core';
 
-function Contact() {
+function Contact(props) {
+    setTimeout(() => {
+        props.history.push('/about');
+    }, 3000)
     return (
         <Container style={{ textAlign: 'center' }} maxWidth='md'>
             <h2> Contact </h2>

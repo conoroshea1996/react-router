@@ -17,17 +17,22 @@ class Navbar extends React.Component {
             <nav>
                 <div className="nav-wrapper blue darken-1">
                     <Container maxWidth='md'>
-                        <div onClick={this.ToggleNav} className={'toggler navbar_btn ' + (this.state.isToggled ? '' : 'change')}>
+                        <div onClick={this.ToggleNav}
+                            className=
+                            {'toggler navbar_btn ' + (this.state.isToggled ? '' : 'change')}
+                        >
                             <div className="bar bar1"></div>
                             <div className="bar bar2"></div>
                             <div className="bar bar3"></div>
                         </div>
-                        <a href="#" className="brand-logo">Logo</a>
+                        <a href="#" className="brand-logo">Navbar</a>
+
                         <ul id="nav-mobile" className="right full-size-nav">
                             <li> <NavLink exact={true} to='/'>Home</NavLink> </li>
                             <li><NavLink to='/about'>About</NavLink></li>
                             <li><NavLink to='/contact'>Contact</NavLink></li>
                         </ul>
+
                         <ul className={this.state.isToggled ? 'none' : 'small-size-nav'} >
                             <li> <NavLink exact={true} to='/'>Home</NavLink> </li>
                             <li><NavLink to='/about'>About</NavLink></li>

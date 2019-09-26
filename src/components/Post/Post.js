@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import { Container } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import loader from '../../media/loader.gif';
 
 
@@ -25,7 +27,7 @@ class Post extends Component {
         const { post } = this.state;
 
         let displayPost = post ? (
-            <Card style={{ marginTop: '1rem' }} >
+            <Card style={{ marginTop: '1rem', padding: '2rem' }} >
                 <CardContent style={{ textAlign: 'center' }} >
                     <Typography component="h2" gutterBottom>
                         {post.title}
@@ -36,6 +38,7 @@ class Post extends Component {
                     <Typography color="textSecondary" gutterBottom>
                         {post.id}
                     </Typography>
+                    <Link to='/'> <Button style={{ background: 'lightblue' }} fullWidth>Take Me Home</Button> </Link>
                 </CardContent>
             </Card>
         ) :

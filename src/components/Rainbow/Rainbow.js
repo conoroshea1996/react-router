@@ -13,5 +13,4 @@ function Rainbow(WrappedComponent) {
         )
     }
 }
-
 export default Rainbow;

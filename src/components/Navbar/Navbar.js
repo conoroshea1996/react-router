@@ -24,7 +24,7 @@ class Navbar extends Component {
                             <div className="bar bar2"></div>
                             <div className="bar bar3"></div>
                         </div>
-                        <a href="#" className="brand-logo">Navbar</a>
+                        <NavLink className="brand-logo" exact={true} to='/'>Navbar</NavLink>
 
                         <ul id="nav-mobile" className="right full-size-nav">
                             <li> <NavLink exact={true} to='/'>Home</NavLink> </li>

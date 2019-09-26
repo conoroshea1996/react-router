@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import { Link } from 'react-router-dom';
 import { Container } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import loader from '../../media/loader.gif'
 
 class Home extends Component {
     state = {
         posts: []
     }
+
     componentDidMount() {
         axios.get('https://jsonplaceholder.typicode.com/posts')
             .then(res => {
@@ -19,6 +22,7 @@ class Home extends Component {
                 })
             })
     }
+
     render() {
         const { posts } = this.state;
         const postList = posts.length ?
@@ -32,16 +36,18 @@ class Home extends Component {
                             <Typography color="textSecondary" gutterBottom>
                                 {post.body}
                             </Typography>
+                            <Link to={'/' + post.id}> <Button style={{ background: 'lightblue' }} fullWidth>See post</Button> </Link>
                         </CardContent>
                     </Card>
                 )
-            })
-
-            ) : (
+            }))
+            :
+            (
                 <div>
                     <img src={loader} alt='loader'></img>
                 </div>
             );
+
         return (
             <Container style={{ textAlign: 'center' }} maxWidth='md' >
                 <h2 >Home</h2>

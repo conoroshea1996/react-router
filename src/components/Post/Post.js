@@ -7,11 +7,11 @@ class Post extends Component {
     }
     componentDidMount() {
         let id = this.props.match.params.post_id
-
         this.setState({
             id
         })
     }
+
     render() {
         console.log(this.state);
         return (<Container maxWidth='md'>

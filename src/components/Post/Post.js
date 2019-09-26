@@ -4,6 +4,7 @@ import { Container } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import loader from '../../media/loader.gif';
 
 
 class Post extends Component {
@@ -22,21 +23,30 @@ class Post extends Component {
 
     render() {
         const { post } = this.state;
+
+        let displayPost = post ? (
+            <Card style={{ marginTop: '1rem' }} >
+                <CardContent style={{ textAlign: 'center' }} >
+                    <Typography component="h2" gutterBottom>
+                        {post.title}
+                    </Typography>
+                    <Typography color="textSecondary" gutterBottom>
+                        {post.body}
+                    </Typography>
+                    <Typography color="textSecondary" gutterBottom>
+                        {post.id}
+                    </Typography>
+                </CardContent>
+            </Card>
+        ) :
+            (
+                <div>
+                    <img src={loader} alt='loader'></img>
+                </div>
+            )
         return (
             <Container maxWidth='md'>
-                <Card style={{ marginTop: '1rem' }} >
-                    <CardContent style={{ textAlign: 'center' }} >
-                        <Typography component="h2" gutterBottom>
-                            {post.title}
-                        </Typography>
-                        <Typography color="textSecondary" gutterBottom>
-                            {post.body}
-                        </Typography>
-                        <Typography color="textSecondary" gutterBottom>
-                            {post.id}
-                        </Typography>
-                    </CardContent>
-                </Card>
+                {displayPost}
             </Container>
         )
     }

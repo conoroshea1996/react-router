@@ -40,12 +40,12 @@ class Post extends Component {
             </Card>
         ) :
             (
-                <div>
+                <div >
                     <img src={loader} alt='loader'></img>
                 </div>
             )
         return (
-            <Container maxWidth='md'>
+            <Container style={{ textAlign: 'center' }} maxWidth='md'>
                 {displayPost}
             </Container>
         )

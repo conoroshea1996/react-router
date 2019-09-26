@@ -21,18 +21,19 @@ class Post extends Component {
     }
 
     render() {
+        const { post } = this.state;
         return (
             <Container maxWidth='md'>
                 <Card style={{ marginTop: '1rem' }} >
                     <CardContent style={{ textAlign: 'center' }} >
                         <Typography component="h2" gutterBottom>
-                            {this.state.post.title}
+                            {post.title}
                         </Typography>
                         <Typography color="textSecondary" gutterBottom>
-                            {this.state.post.body}
+                            {post.body}
                         </Typography>
                         <Typography color="textSecondary" gutterBottom>
-                            {this.state.post.id}
+                            {post.id}
                         </Typography>
                     </CardContent>
                 </Card>

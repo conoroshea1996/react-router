@@ -1,4 +1,5 @@
 import React from 'react';
+import Rainbow from '../Rainbow/Rainbow';
 import { Container } from '@material-ui/core';
 
 function About() {
@@ -10,4 +11,4 @@ function About() {
     );
 }
 
-export default About;
+export default Rainbow(About);
